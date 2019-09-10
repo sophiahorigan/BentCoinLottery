@@ -9,15 +9,19 @@
 
 library(stats)
 
-arr <- array(0,10)
-for (i in 1:10){
-  arr[i] <- if (runif(1) < 0.1) 1 else 0
+bent_coin_flip <- function(number_of_flips)(number_of_replicates){
+  trial <- array(0,number_of_flips)
+  result <- array(0,number_of_replicates)
+  for (i in 1:number_of_flips){
+    trial[i] <- if (runif(1) < 0.1) 1 else 0
+  }
+  print(trial)
 }
 
-for (j in 1:100){
-  arr <- array(0,10)
-  for (i in 1:10){
-    arr[i] <- if (runif(1) < 0.1) 1 else 0
+bent_coin_flip_replicates <- function(replicates){
+  trial <- array(0,replicates)
+  for (j in 1:replicates){
+    bent_coin_flip_results(number_of_flips)
   }
-  print(arr)
+  print(trial)
 }
